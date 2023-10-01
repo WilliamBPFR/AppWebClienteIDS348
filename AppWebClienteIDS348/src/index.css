@@ -1,0 +1,13 @@
+#searchbar{
+    width: 850px;             
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+  }
+  
+  #root {
+    padding: 15px;
+  }
