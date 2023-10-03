@@ -11,3 +11,134 @@ html, body {
   #root {
     padding: 15px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-filtro{
+    width: 234px;
+    height: 600px;
+    border: 2px solid rgba(103, 100, 101, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    background-color: #F4F4F4;
+}
+
+.titulo-filtro{
+    font-size: 16px;
+    font-family:'Ubuntu', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px;
+}
+
+
+.btn-limpiar{
+    background-color:#CECADC;
+    width: 200px;
+    height: 37px;
+    border: 2px solid rgba(103, 100, 101, 0.5);
+    border-radius:20px;
+    font-weight: bold;
+    margin: auto;
+    
+
+
+}
+
+.no-bullets {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: -20px;
+  }
+  
+  ul.no-bullets li a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s; /* Agrega una transición suave para el cambio de color */
+  }
+  
+  ul.no-bullets li a:hover {
+    color: purple; /* Cambia el color al pasar el ratón por encima a morado */
+  }
+
+
+  .ant-collapse-header-text{
+    font-weight: bold;
+    text-align: left;
+  }
+
+  /* Estilo para los elementos con clases personalizadas */
+.custom-label {
+    display: block; /* Cambiar a bloque para separar en líneas */
+    margin-bottom: 10px; /* Separación de 10px entre etiquetas */
+    text-align: left;
+  }
+  
+  .custom-input {
+    width: 150px; /* Ancho personalizado, ajusta según tus necesidades */
+    margin-left: 14px;
+    border: none; /* Eliminar el borde de los inputs */
+    outline: none; /* Eliminar el contorno al hacer clic */
+  }
+  
+  /* Estilo para mostrar "$RD" antes de hacer clic */
+  .custom-input::before {
+    content: "$RD"; /* Agregar el texto "$RD" antes del número */
+    margin-right: 5px; /* Separación entre "$RD" y el número */
+  }
+  
+  /* Deshabilitar la capacidad de desplazamiento con el ratón en los inputs */
+  .custom-input::-webkit-inner-spin-button,
+  .custom-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Eliminar botones de incremento y decremento */
+  }
+
+
+  /* Estilo para los elementos del grupo de checkboxes */
+.checkbox-group {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos uno debajo del otro */
+  }
+  
+  .checkbox-group label {
+    display: flex;
+    align-items: center; /* Centrar verticalmente los elementos */
+    margin-bottom: 10px; /* Separación de 10px entre etiquetas */
+  }
+  
+  .checkbox-group input[type='checkbox'] {
+    margin-left: 10px; /* Separación de 10px entre la etiqueta y el checkbox */
+  }
+  
+
+  .btn-Apply{
+    background-color:#54428E;
+    
+    width: 200px;
+    height: 37px;
+    border: 2px solid rgba(103, 100, 101, 0.5);
+    border-radius:50px;
+    font-weight: bold;
+    margin: auto;
+    color: white;
+}

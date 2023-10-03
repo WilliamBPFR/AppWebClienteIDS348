@@ -5,6 +5,7 @@ import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Product from './pages/Poduct';
 import Header from './components/nav/Header';
+import Filtro from './components/filter/Filter';
 
 
 const router = createBrowserRouter(
@@ -14,6 +15,8 @@ const router = createBrowserRouter(
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
       <Route path="product" element={<Product />} />
+
+      <Route path="Filtro" element={<Filtro />} />
     </Route>
   )
 )
