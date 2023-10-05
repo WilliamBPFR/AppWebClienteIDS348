@@ -1,24 +1,10 @@
-import { Button, ConfigProvider, Space } from 'antd';
 import React from 'react';
+import { Menu, ConfigProvider, Space, Button } from 'antd';
+import { Outlet, Link } from 'react-router-dom';
 
-const Home = () => (
-  <ConfigProvider
-    theme={{
-      token: {
-        // Seed Token
-        colorPrimary: '#54428E',
-        borderRadius: 2,
 
-        // Alias Token
-        colorBgContainer: '#EBEBEB',
-      },
-    }}
-  >
-    <Space>
-      <Button type="primary">Comprar ahora</Button>
-      <Button>Agregar al carrito</Button>
-    </Space>
-  </ConfigProvider>
-);
-
+const Home = () => {
+ 
+}
+ 
 export default Home;

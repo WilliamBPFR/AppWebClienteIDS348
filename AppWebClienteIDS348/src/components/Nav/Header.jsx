@@ -3,6 +3,7 @@ import { Menu, ConfigProvider, Space } from 'antd';
 import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import logo from '@/assets/logo.jpg'; 
 
 const Header = () => {
   const [current, setCurrent] = useState('h');
@@ -25,9 +26,11 @@ const Header = () => {
   
     <>
      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal">
-      <Menu.Item key="h" icon= {<HomeOutlined />}>
-       <Link to="/">Home</Link>
-      </Menu.Item>
+       <Menu.Item key="h" style={{ marginLeft: 'auto' }}>
+          <Link to="/">
+            <img src={logo} alt="Home" />
+          </Link>
+        </Menu.Item>
 
       <Menu.Item key="search">
           <SearchBar />
