@@ -142,3 +142,151 @@ html, body {
     margin: auto;
     color: white;
 }
+
+.contenedor-producto {
+  display: inline-block; /* Cambia la visualización a en línea */
+  text-align: center; /* Centra el contenido horizontalmente */
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 234px; /* Ancho del producto */
+  height: 307px; /* Alto del producto */
+  vertical-align: top; /* Alinea la parte superior de los productos */
+}
+
+/* Estilos para la imagen del producto */
+.imagen-producto {
+  width: 150px; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: 150; /* Para mantener la proporción de aspecto */
+  margin: 0 auto 10px;
+  margin-top: 20pxw; /* Centra la imagen horizontalmente y agrega espacio inferior */
+}
+
+/* Estilos para el título del producto */
+.titulo {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0; /* Añade espacio vertical alrededor del título */
+}
+
+/* Estilos para la descripción del producto */
+.descripcion {
+  margin: 5px 0; /* Espacio vertical alrededor de la descripción */
+  color: #555;
+}
+
+/* Estilos para el precio del producto */
+.precio {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff; /* Cambia el color del precio según tus preferencias */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

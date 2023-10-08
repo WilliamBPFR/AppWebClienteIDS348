@@ -6,4 +6,4 @@ const Clear_button = () => {
   )
 }
 
-export default Clear_button ;;
+export default Clear_button ;
