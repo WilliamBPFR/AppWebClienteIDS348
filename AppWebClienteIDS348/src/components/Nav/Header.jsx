@@ -1,9 +1,10 @@
-import { HomeOutlined, EditOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, EditOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Menu, ConfigProvider, Space } from 'antd';
 import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import logo from '@/assets/logo.jpg'; 
+
 
 const Header = () => {
   const [current, setCurrent] = useState('h');
@@ -43,6 +44,11 @@ const Header = () => {
       <Menu.Item key="l" icon= {<UserOutlined />} >
         <Link to="/login">Login</Link>
       </Menu.Item>
+
+      <Menu.Item key="S" icon= {<ShoppingCartOutlined />} >
+        <Link to="/shoppingCart"></Link>
+      </Menu.Item>
+
      </Menu>
      <Outlet/>
     </>
