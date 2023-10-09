@@ -1,5 +1,5 @@
 import React from 'react';
-import laptogamer from '@/assets/laptogamer.jpeg';
+import foto1 from '@/assets/foto1.jpg';
 import { Outlet, Link } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ const Home = () => {
 
             <img 
             className="imagen-producto"
-            src={laptogamer}
+            src={foto1}
             alt="foto-producto"
             ></img>
 
