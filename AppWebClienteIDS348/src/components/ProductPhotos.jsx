@@ -52,12 +52,11 @@ import foto3min from '@/assets/foto3.gif';
     }
 
     return (
-     <div class="grid grid-flow-row-dense grid-cols-3 grid-rows-3">
-     <div class="card col-span-6">
+     <div>
+     <div>
     <Galleria value={images} responsiveOptions={responsiveOptions} numVisible={5} item={itemTemplate} thumbnail={thumbnailTemplate} />
     </div>
-    <div class="col-span-6"></div>
-    <div class="col-span-6">02</div>
+  
     </div>
     )
 }

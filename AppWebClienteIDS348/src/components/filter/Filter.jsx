@@ -5,7 +5,7 @@ import Clear_button from './Buttonfilter.jsx';
 import App from './drow.jsx';
 import ButtonApply from './ButtonApply.jsx'
 
-const Filtro = () => {
+const Filter = () => {
   return (
     <div className='container-filtro'>
         
@@ -23,4 +23,4 @@ const Filtro = () => {
   );
 };
 
-export default Filtro;
+export default Filter;

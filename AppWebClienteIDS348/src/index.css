@@ -38,8 +38,6 @@
     border-radius:20px;
     font-weight: bold;
     margin: auto;
-    
-
 
 }
 
@@ -125,10 +123,8 @@
 }
 
 .contenedor-producto {
-  display: inline-block; /* Cambia la visualización a en línea */
-  text-align: center; /* Centra el contenido horizontalmente */
-  border: 1px solid #ccc;
-  margin: 10px;
+  display: flex;
+  margin: 10px, 10px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -148,6 +144,7 @@
 
 /* Estilos para el título del producto */
 .titulo {
+  width: 100px; /* Ajusta el ancho del título según tus necesidades */
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0; /* Añade espacio vertical alrededor del título */
@@ -155,6 +152,7 @@
 
 /* Estilos para la descripción del producto */
 .descripcion {
+  width: 100px; /* Ajusta el ancho de la descripción según tus necesidades */
   margin: 5px 0; /* Espacio vertical alrededor de la descripción */
   color: #555;
 }
@@ -337,6 +335,21 @@
 
 
 
+/* DD SIZE */
+.w-full {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .md\\:w-14rem {
+    width: 14rem;
+  }
+}
+
+/* En tu archivo de estilos CSS */
+.custom-dropdown-width {
+  width: 10rem; /* Ajusta el ancho según tus necesidades */
+}
 
 
 
