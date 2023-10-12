@@ -7,7 +7,7 @@ const Home = () => {
     return (
       
         <div>
-        <div class="flex flex-nowrap">
+        <div class="flex flex-nowrap row-spacing">
             <div className=" mx-4 row-span-3">
             <Filter/>
              </div>
@@ -94,7 +94,7 @@ const Home = () => {
         </div>
 
         <div class="flex flex-nowrap">
-            <div className=" mx-4 row-span-3">
+            <div className=" mx-4 row-span-3 invisible">
             <Filter/>
              </div>
                 

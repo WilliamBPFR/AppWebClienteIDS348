@@ -12,9 +12,6 @@ return(
         // Seed Token
         colorPrimary: '#54428E',
         borderRadius: 2,
-
-        // Alias Token
-        colorBgContainer: '#EBEBEB',
       },
     }}
   >
