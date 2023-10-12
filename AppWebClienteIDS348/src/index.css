@@ -130,11 +130,13 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  width: 234px; /* Ancho del producto */
-  height: 307px; /* Alto del producto */
+  width: 22%; /* Ancho del producto */
+  height: 100%; /* Alto del producto */
   vertical-align: top; /* Alinea la parte superior de los productos */
 }
-
+.cont-prods{
+  padding-top: 5%;
+}
 /* Estilos para la imagen del producto */
 .imagen-producto {
   width: 150px; /* Ajusta el ancho de la imagen según tus necesidades */
