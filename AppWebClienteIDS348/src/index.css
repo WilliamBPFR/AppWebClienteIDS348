@@ -143,8 +143,9 @@
 /* Estilos para la imagen del producto */
 .imagen-producto {
   width: 150px; /* Ajusta el ancho de la imagen según tus necesidades */
-  height: 150; /* Para mantener la proporción de aspecto */
+  height: 289.39px; /* Para mantener la proporción de aspecto */
   margin: 0 auto 10px;
+  object-fit:fill;
   margin-top: 20pxw; /* Centra la imagen horizontalmente y agrega espacio inferior */
 }
 

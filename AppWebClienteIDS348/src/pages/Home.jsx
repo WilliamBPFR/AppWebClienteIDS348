@@ -52,7 +52,7 @@ const Home = () => {
               <div key={producto.id} className="m-2 p-4 contenedor-producto card col-span-4">
                 <img
                   className="imagen-producto"
-                  src={foto1}
+                  src={producto.idProducto == 11077 ? producto.fotos[0] : foto1}
                   alt={producto.fotos != undefined ? producto.fotos[0] : 'No hay foto'}
                 />
 
