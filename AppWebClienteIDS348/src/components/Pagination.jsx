@@ -22,6 +22,7 @@ export default function Pagination({onPageChange}) {
 
     useEffect(() => {
         // Llama a la función totalProductos para obtener la cantidad total de productos
+        if(location.pathname == "/"){
         if(searchParam == undefined || searchParam == "" || searchParam == null){
             totalProductos()
                 .then(response => {
@@ -45,6 +46,7 @@ export default function Pagination({onPageChange}) {
                 console.error('Error al obtener la cantidad total de productos:', error);
             });
         }
+    }
     }, [searchParam]); // Este efecto se ejecutará una vez al cargar el componente
 
     // const onPageChange = (event) => {

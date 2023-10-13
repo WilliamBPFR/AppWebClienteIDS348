@@ -1,18 +1,21 @@
 import { HomeOutlined, EditOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Menu, ConfigProvider, Space } from 'antd';
 import { useState, useEffect } from 'react';
-import { Outlet, Link,useNavigate } from 'react-router-dom';
+import { Outlet, Link,useNavigate,useLocation } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import logo from '@/assets/logo.jpg'; 
 
 
 const Header = () => {
+  const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
   const [current, setCurrent] = useState('h');
   const [searchValue, setSearchValue] = useState(''); // Estado para almacenar el valor de búsqueda
   const navigate = useNavigate();
 
 useEffect(() => {
-  navigate(`/?search=${searchValue}`);
+  if(searchValue != undefined && searchValue != '' && searchValue != null){
+    navigate(`/?search=${searchValue}`);
+  }
 }, [searchValue]);
 
   const handleSearch = (value) => {
@@ -27,7 +30,7 @@ useEffect(() => {
   const accion =() =>{
     setSearchValue('');
   };
-  
+
   return (<ConfigProvider
     theme={{
       token: {

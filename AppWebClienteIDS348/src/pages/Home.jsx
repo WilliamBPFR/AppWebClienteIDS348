@@ -13,6 +13,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(0); // Estado para mantener el número de página actual
 
   useEffect(() => {
+    if(location.pathname == "/"){
     async function fetchProductos(pag) {
       try {
         console.log("ENTRE USEFECT PRODUCTOOOO: " + searchParam);
@@ -30,7 +31,8 @@ const Home = () => {
       }
     }
     fetchProductos(currentPage); // Llama a la función con la página actual
-  }, [currentPage,searchParam]);
+  }
+  }, [currentPage]);
 
   const handlePageChange = (page) => {
     console.log("ENTRE HANDLEPAGECHANGE");
@@ -51,7 +53,7 @@ const Home = () => {
                 <img
                   className="imagen-producto"
                   src={foto1}
-                  alt={producto.fotos != undefined ? producto.fotos[0].url : 'No hay foto'}
+                  alt={producto.fotos != undefined ? producto.fotos[0] : 'No hay foto'}
                 />
 
                 <div className="info-producto">

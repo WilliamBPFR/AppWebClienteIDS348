@@ -5,40 +5,35 @@ import ProductPhotos from '@/components/ProductPhotos';
 
 
 const Product = () => {
+
   const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
   const idParam = new URLSearchParams(location.search).get('id'); // Obtiene el valor del parámetro id
   const [dataProduct, setProductData] = useState(null);
 
   useEffect(() => {
-  
+    console.log("entreee a productooooooo: ")
     const fetchProductDetails = async () => {
       try {
-        console.log("ENTRE USEFECT DETALLES PRODUCTOOOO: " + idParam);
         let response;
-        if(idParam == undefined || idParam == ""){
-          response = await ProductoPaginacion(pag+1);
-      }
+        if(idParam != undefined || idParam != "" || idParam != null){
+          response = await ProductDetails(idParam);
+          const productData = response.data.value; // Asume que la respuesta contiene una lista de productos
+          console.log(productData);
+          setProductData(productData);
+        }
       else{
-        response = await ProductDetails(idParam); // Llama a la función para obtener los detalles del producto
-        const dataProduct = response.data; 
-        console.log(dataProduct);
-        setProductData(idParam);
+        console.log("ENTRE USEFECT DETALLES PRODUCTOOOO: " + idParam);
       }
-   
-
     } catch (error) {
         console.error('Error al obtener detalles del producto:', error);
       }
     };
-
     fetchProductDetails();
-  }, []);
+  }, [idParam]);
   
-  if (!productData) {
+  if (!dataProduct) {
     return <div>Cargando...</div>;
   }
-  
-
   // Una vez que los datos estén disponibles, puedes renderizar tu componente Product con los datos
   return (
    
@@ -52,7 +47,7 @@ const Product = () => {
         <div className="border-b border-gray-300 pb-2 mb-4">
       {/* Esta es la línea debajo del nombre del producto */}
       </div>
-        <p className="text-3xl text-green-500">{dataProduct.availability}</p>
+        <p className="text-3xl text-green-500">{dataProduct.cant_stock >0 ?"Disponible":"No Disponible"}</p>
         <p className="text-2xl">Precio:</p>
         <p className="text-2xl text-red-500">$/ {dataProduct.precio}</p>
         <div class="flex flex-row">
@@ -65,12 +60,12 @@ const Product = () => {
 
         <div className='basis-1/4 mx-2' >
         <p className="text-2xl">Color: </p> 
-        <div className="w-6 h-6 rounded-full border border-black" style={{ dataProduct: "#000000" }}></div>
+        <div className="w-6 h-6 rounded-full border border-black" style={{ backgroundColor: "#000000" }}></div>
         </div>
 
         <p className="text-2xl">{dataProduct.descripcion}</p>
         <div  className="border border-gray-300 p-4 rounded">
-          <p>{productData.Size}</p>
+          <p>{dataProduct.Size}</p>
         </div>
       
       <label className="text-2xl ">Cantidad:</label>
@@ -87,9 +82,6 @@ const Product = () => {
       
   );
 };
-
-
-
   export default Product;
     
  
