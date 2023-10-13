@@ -47,13 +47,13 @@ const Product = () => (
     <div  className="border border-gray-300 p-4 rounded">
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </div>
-    <label className="text-2xl">Cantidad:</label>
-      <input
+    <label className="text-2xl ">Cantidad:</label>
+      <input className="border border-gray-300 rounded w-20 h-10 ml-2"
         type="number"
       />
     <div  className="flex justify-center mt-10">
-      <Button type="primary" className="mr-4">Comprar ahora</Button>
-      <Button className="mr-4">Agregar al carrito</Button>
+    <button className="login-button m-4">Comprar ahora</button>
+    <button className="login-button-claro m-4">Agregar al carrito</button>
     </div>
     </div>
 
