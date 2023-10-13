@@ -1,17 +1,33 @@
 import { HomeOutlined, EditOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Menu, ConfigProvider, Space } from 'antd';
-import { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Outlet, Link,useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import logo from '@/assets/logo.jpg'; 
 
 
 const Header = () => {
   const [current, setCurrent] = useState('h');
+  const [searchValue, setSearchValue] = useState(''); // Estado para almacenar el valor de búsqueda
+  const navigate = useNavigate();
+
+useEffect(() => {
+  navigate(`/?search=${searchValue}`);
+}, [searchValue]);
+
+  const handleSearch = (value) => {
+    setSearchValue(value); // Almacena el valor de búsqueda en el estado
+  };
+
   const onClick = (e) => {
     console.log('click ', e);
     setCurrent(e.key);
   };
+
+  const accion =() =>{
+    setSearchValue('');
+  };
+  
   return (<ConfigProvider
     theme={{
       token: {
@@ -24,17 +40,16 @@ const Header = () => {
       },
     }}
   >
-  
     <>
      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal">
        <Menu.Item key="h" style={{ marginLeft: 'auto' }}>
-          <Link to="/">
+          <Link onClick={accion} to="/">
             <img src={logo} alt="Home" />
           </Link>
         </Menu.Item>
 
       <Menu.Item key="search">
-          <SearchBar />
+          <SearchBar onSearch={handleSearch}/>
         </Menu.Item>
 
       <Menu.Item key="r" icon= {<EditOutlined />} style={{ marginLeft: 'auto' }}>

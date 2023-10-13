@@ -20,10 +20,10 @@ export const ProductoPaginacion = async (pag) => {
     }
 };
 
-export const ProductoPaginacionSoundex = async (pag) => {
+export const ProductoPaginacionSoundex = async (pag,soundex) => {
   try {
       console.log("ENTRE A PRODUCTO PAGINACION. PAG SOUNDEX: " + pag)
-      const response = await axios.get(BASE_URL + `ProductosPaginacion/${pag}`,{
+      const response = await axios.get(BASE_URL + `ListaProductosSoundex/${soundex}/${pag}`,{
           headers: {
             "Content-Type": "application/json", // Establece el tipo de contenido como JSON
           },
@@ -51,6 +51,22 @@ export const totalProductos = async () => {
     throw error;
   }
 }
+
+export const totalProductosSoundex = async (soundex) => {
+  try {
+      const response = await axios.get(BASE_URL + `CantProdSoundex/${soundex}`, {
+          headers: {
+            "Content-Type": "application/json", // Establece el tipo de contenido como JSON
+          },
+      });      
+      const respuesta = new ResponseAPI(response.status, response.data, response.statusText);
+    return respuesta;
+  } catch (error) {
+    console.error('Error en productoPaginacion:', error);
+    throw error;
+  }
+}
+
 
 // Define una función que obtenga los detalles del producto por su ID
 export const ProductDetails = async (productId) => {

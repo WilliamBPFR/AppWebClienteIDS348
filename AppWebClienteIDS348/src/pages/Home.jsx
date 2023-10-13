@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import foto1 from '@/assets/foto1.jpg';
 import Filter from '../components/filter/Filter';
 import Pagination from '../components/Pagination';
-import { ProductoPaginacion } from "@/services/productoService";
+import { ProductoPaginacion,ProductoPaginacionSoundex } from "@/services/productoService";
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
@@ -17,9 +17,10 @@ const Home = () => {
       try {
         console.log("ENTRE USEFECT PRODUCTOOOO: " + searchParam);
         let response;
-        if(searchParam == undefined || searchParam == ""){
+        if(searchParam == undefined || searchParam == "" || searchParam == null){
         response = await ProductoPaginacion(pag+1);
         }else{
+          response = await ProductoPaginacionSoundex(pag+1,searchParam);
         }
         const productosData = response.data.value; // Asume que la respuesta contiene una lista de productos
         console.log(productosData);
@@ -29,7 +30,7 @@ const Home = () => {
       }
     }
     fetchProductos(currentPage); // Llama a la función con la página actual
-  }, [currentPage]);
+  }, [currentPage,searchParam]);
 
   const handlePageChange = (page) => {
     console.log("ENTRE HANDLEPAGECHANGE");
