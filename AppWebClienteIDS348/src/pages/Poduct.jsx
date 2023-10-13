@@ -74,8 +74,13 @@ const Product = () => {
       />
 
       <div  className="flex justify-center mt-10">
-          <button className="login-button m-4">Comprar ahora</button>
-          <button className="login-button-claro m-4">Agregar al carrito</button>
+      <a href={`/checkout/?id=${dataProduct.idProducto}&cant=${productoCantidad}`}>
+          <button className="login-button m-5"> 
+            Comprar ahora
+          </button>
+       </a>
+          <button className="login-button-claro m-5">Agregar al carrito</button>
+          
       </div>
       </div>
       </div>

@@ -6,8 +6,6 @@ import { totalProductos,totalProductosSoundex } from "@/services/productoService
 import { useLocation } from 'react-router-dom';
 
 
-
-
 export default function Pagination({onPageChange}) {
     const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
     const searchParam = new URLSearchParams(location.search).get('search'); // Obtiene el valor del parámetro search

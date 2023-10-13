@@ -81,7 +81,7 @@ export const ProductDetails = async (productId) => {
   });      
   const respuesta = new ResponseAPI(response.status, response.data, response.statusText);
   return respuesta;
-  
+
   } catch (error) {
     // En caso de un error en la solicitud, maneja el error adecuadamente
     console.error('Error al obtener detalles del producto:', error);

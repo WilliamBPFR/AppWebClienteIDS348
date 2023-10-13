@@ -21,7 +21,8 @@ const Header = () => {
       const cookie = Cookies.get('miCookie');
       if(cookie == undefined || cookie == "" || cookie == null){
         setloggeado(false);
-        if(location.pathname == "/shoppingCart"){
+        if( location.pathname.includes("/shoppingCart") ||   location.pathname.includes("/checkOut")  ){
+          console.log("entreee a verificacion de usuario:aaaaaaaaaaaaaaaaaa " + cookie)
           navigate('/login');
         }
       }
@@ -46,7 +47,9 @@ const Header = () => {
       const cookie =Cookies.get('miCookie');
       TraerUsuario(cookie)
       .then(response => {
-          if(response.status == true)
+        console.log("entreee a traer usuario: " + cookie)
+        console.log(response)
+          if(response.data.usuario_logueado == true)
           {
             setUserCorreo(response.data.email);
           }
@@ -55,6 +58,7 @@ const Header = () => {
             setloggeado(false);
             Cookies.remove('miCookie');
             navigate('/login');
+
             }
           }
         });
