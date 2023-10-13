@@ -4,11 +4,17 @@ import { useLocation } from 'react-router-dom';
 import ProductPhotos from '@/components/ProductPhotos';
 
 
+
 const Product = () => {
 
   const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
   const idParam = new URLSearchParams(location.search).get('id'); // Obtiene el valor del parámetro id
   const [dataProduct, setProductData] = useState(null);
+  const [valorInput, setValorInput] = useState('');
+
+  const handleInputChange = (e) => {
+    setValorInput(e.target.value);
+  };
 
   useEffect(() => {
     console.log("entreee a productooooooo: ")
@@ -71,10 +77,12 @@ const Product = () => {
       <label className="text-2xl ">Cantidad:</label>
       <input className="border border-gray-300 rounded w-20 h-10 ml-2"
         type="number"
+        value={valorInput}
+        onChange={handleInputChange}
       />
 
       <div  className="flex justify-center mt-10">
-      <a href={`/checkout/?id=${dataProduct.idProducto}&cant=${productoCantidad}`}>
+      <a href={`/checkout/?id=${dataProduct.idProducto}&cant=${valorInput}`}>
           <button className="login-button m-5"> 
             Comprar ahora
           </button>
