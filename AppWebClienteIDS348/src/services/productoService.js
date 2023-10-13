@@ -35,3 +35,18 @@ export const totalProductos = async () => {
     throw error;
   }
 }
+
+// Define una función que obtenga los detalles del producto por su ID
+export const ProductDetails = async (productId) => {
+  try {
+    // Realiza una solicitud a tu API o base de datos para obtener los detalles del producto
+    const response = await axios.get(`/api/Product/${productId}`); // Ajusta la URL según tu estructura
+
+    // Si la solicitud se realiza con éxito, devuelve los detalles del producto
+    return response.data;
+  } catch (error) {
+    // En caso de un error en la solicitud, maneja el error adecuadamente
+    console.error('Error al obtener detalles del producto:', error);
+    throw error; // Puedes lanzar el error nuevamente para que se maneje en el lugar donde se llama a la función
+  }
+};
