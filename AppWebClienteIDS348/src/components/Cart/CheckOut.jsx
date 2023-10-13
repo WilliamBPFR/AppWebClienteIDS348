@@ -152,9 +152,9 @@ const CheckOut = () => {
 
 <div className="productos-container">
   <h3>Título de Productos a Comprar</h3>
-  <div className="producto flex flex-nowrap">
-    <div className="prod  col-span-2">
-      <div className="producto-content">
+  <div className="flex flex-row">
+    <div class="basis-1/4">
+      <div className="card">
         <div className="imagen-producto2 ">
           <img
             src={foto1}
@@ -162,50 +162,49 @@ const CheckOut = () => {
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />
         </div>
-        <div className="detalles-producto">
-          <h4 className="nombre-producto">Producto 1</h4>
+        <div >
+          <h4 className="">Producto 1</h4>
           <p>Cantidad a comprar: 5</p>
           <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
     </div>
   </div>
-  <hr />
+  
 
-  <div className="producto">
-    <div className="prod">
-      <div className="producto-content">
-        <div className="imagen-producto2">
+  <div className="flex flex-row">
+    <div class="basis-1/4">
+      <div className="card">
+        <div className="imagen-producto2 ">
           <img
             src={foto1}
             alt={foto1}
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />
         </div>
-        <div className="detalles-producto">
-          <h4 className="nombre-producto">Producto 2</h4>
-          <p>Cantidad a comprar: 3</p>
-          <p>Fecha de llegada: 20/10/2023</p>
+        <div >
+          <h4 className="">Producto 1</h4>
+          <p>Cantidad a comprar: 5</p>
+          <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
     </div>
   </div>
-  <hr />
 
-  <div className="producto">
-    <div className="prod">
-      <div className="producto-content">
-        <div className="imagen-producto2">
+  <div className="flex flex-row">
+    <div class="basis-1/4">
+      <div className="card">
+        <div className="imagen-producto2 ">
           <img
             src={foto1}
             alt={foto1}
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />
         </div>
-        <div className="detalles-producto">
-          <h4 className="nombre-producto">Producto 3</h4>
-          <p>Cantidad a comprar: 2</p>
-          <p>Fecha de llegada: 25/10/2023</p>
+        <div >
+          <h4 className="">Producto 1</h4>
+          <p>Cantidad a comprar: 5</p>
+          <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
     </div>
