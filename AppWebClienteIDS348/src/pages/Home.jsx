@@ -58,7 +58,7 @@ const Home = () => {
                   <p className="titulo">{producto.nombre}</p>
                   <p className="descripcion">{producto.descripcion}</p>
                   <p className="precio">{producto.precio}</p>
-                  <a href={`/product/${producto.idProducto}`}> {/* Ajusta la URL según tu estructura */}
+                  <a href={`/product/?id=${producto.idProducto}`}> {/* Ajusta la URL según tu estructura */}
                     <button className="login-button">Ver más</button>
                   </a>
                 </div>

@@ -15,7 +15,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} params= {{search: ""}} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
-      <Route path="product/:productId" element={<Product />} />
+      <Route path="product/:idproduct" element={<Product />} params= {{id: ""}}/>
       <Route path="shoppingCart" element={<ShoppingCart />} />
     </Route>
   )
