@@ -19,11 +19,10 @@ const Product = () => {
           response = await ProductoPaginacion(pag+1);
       }
       else{
-        console.log(dataProduct);  
         response = await ProductDetails(idParam); // Llama a la función para obtener los detalles del producto
         const dataProduct = response.data; 
         console.log(dataProduct);
-        ProductDetails(idParam);
+        setProductData(idParam);
       }
    
 
@@ -34,7 +33,11 @@ const Product = () => {
 
     fetchProductDetails();
   }, []);
-
+  
+  if (!productData) {
+    return <div>Cargando...</div>;
+  }
+  
 
   // Una vez que los datos estén disponibles, puedes renderizar tu componente Product con los datos
   return (
