@@ -8,6 +8,7 @@ import Header from './components/Nav/Header';
 import Filtro from './components/filter/Filter';
 import ShoppingCart from './pages/ShoppingCart';
 import CheckOut from './components/Cart/CheckOut';
+import Resum from './components/Cart/Resum';
 
 
 const router = createBrowserRouter(
@@ -19,7 +20,7 @@ const router = createBrowserRouter(
       <Route path="product" element={<Product />} params= {{id: ""}}/>
       <Route path="shoppingCart" element={<ShoppingCart />} />
       <Route path="checkout" element={<CheckOut />} />
-
+      <Route path="resum" element={<Resum />} />
     </Route>
   )
 )
