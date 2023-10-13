@@ -12,7 +12,7 @@ import ShoppingCart from './pages/ShoppingCart';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Header />}>
-      <Route index element={<Home />} />
+      <Route index element={<Home />} params= {{search: ""}} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
       <Route path="product/:productId" element={<Product />} />

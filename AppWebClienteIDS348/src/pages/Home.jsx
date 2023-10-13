@@ -3,16 +3,24 @@ import foto1 from '@/assets/foto1.jpg';
 import Filter from '../components/filter/Filter';
 import Pagination from '../components/Pagination';
 import { ProductoPaginacion } from "@/services/productoService";
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
+  const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
+  const searchParam = new URLSearchParams(location.search).get('search'); // Obtiene el valor del parámetro search
+
   const [productos, setProductos] = useState([]);
   const [currentPage, setCurrentPage] = useState(0); // Estado para mantener el número de página actual
 
   useEffect(() => {
     async function fetchProductos(pag) {
       try {
-        console.log("ENTRE USEFECT PRODUCTOOOO");
-        const response = await ProductoPaginacion(pag+1);
+        console.log("ENTRE USEFECT PRODUCTOOOO: " + searchParam);
+        let response;
+        if(searchParam == undefined || searchParam == ""){
+        response = await ProductoPaginacion(pag+1);
+        }else{
+        }
         const productosData = response.data.value; // Asume que la respuesta contiene una lista de productos
         console.log(productosData);
         setProductos(productosData);

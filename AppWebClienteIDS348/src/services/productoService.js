@@ -20,6 +20,22 @@ export const ProductoPaginacion = async (pag) => {
     }
 };
 
+export const ProductoPaginacionSoundex = async (pag) => {
+  try {
+      console.log("ENTRE A PRODUCTO PAGINACION. PAG SOUNDEX: " + pag)
+      const response = await axios.get(BASE_URL + `ProductosPaginacion/${pag}`,{
+          headers: {
+            "Content-Type": "application/json", // Establece el tipo de contenido como JSON
+          },
+      });      
+      const respuesta = new ResponseAPI(response.status, response.data, response.statusText);
+      return respuesta;
+  } catch (error) {
+    console.error('Error en productoPaginacion:', error);
+    throw error;
+  }
+};
+
 
 export const totalProductos = async () => {
   try {
