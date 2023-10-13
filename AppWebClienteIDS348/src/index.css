@@ -11,7 +11,6 @@
     padding: 15px;
   }
 
-  
 
 /* Home y filter */
 .container-filtro{
@@ -137,6 +136,9 @@
 }
 .cont-prods{
   padding-top: 5%;
+}
+.custom-search{
+  background-color: #54428e6c;
 }
 /* Estilos para la imagen del producto */
 .imagen-producto {
