@@ -88,50 +88,53 @@ const CheckOut = () => {
         </p>
         <button
           onClick={handleChangeDireccionEnvio}
-          className="cambiar-direccion-button btn-limpiar"
+          className="login-button"
         >
           Cambiar Dirección
         </button>
       </div>
-      <hr className="linea-separadora" />
+      <div className="border-b border-gray-300 pb-2 mb-4"></div>
       <div className="metodo-pago">
         <h3>Método de Pago</h3>
         <p>
-          <span className="metodo-pago-label font-bold pl-10">Método de Pago:</span>
+          <span className="m-4 metodo-pago-label font-bold">Método de Pago:</span>
           <span> {metodoPago}</span>
         </p>
         {metodoPago === 'Tarjeta de Crédito' && (
           <div className="tarjeta-de-credito">
-            <label className="font-bold pl-10">Número de Tarjeta:</label>
+            <label className="font-bold pl-5">Número de Tarjeta:</label>
             <input 
               type="text"
               value={numeroTarjeta}
               onChange={(e) => setNumeroTarjeta(e.target.value)}
             />
-            <label className="font-bold underline">Fecha de Vencimiento:</label>
+            <label className="font-bold">Fecha de Vencimiento:</label>
             <input
               type="text"
               value={fechaVencimiento}
               onChange={(e) => setFechaVencimiento(e.target.value)}
             />
-            <label className="font-bold underline">CVC:</label>
+            <label className="font-bold ">CVC:</label>
             <input
               type="text"
               value={cvc}
               onChange={(e) => setCvc(e.target.value)}
             />
+
           </div>
+          
         )}
-        <div style={{marginLeft:'28%',marginTop:"1%"}}>
+        <div >
           <button
             onClick={handleChangeMetodoPago}
-            className="cambiar-metodo-pago-button btn-limpiar"
+            className="m-4 login-button"
           >
             Cambiar Método de Pago
           </button>
+          <div className="border-b border-gray-300 pb-2 mb-4"></div>
+
         </div>
       </div>
-      <hr className="linea-separadora" />
       <div className="seleccion-envio">
         <h3>Selección de Envío</h3>
         <p>
@@ -139,18 +142,19 @@ const CheckOut = () => {
           <input type="radio" name="envio" value="envio-estandar" /> Envío Estándar
         </p>
       </div>
-      <hr className="linea-separadora" />
-      <button className="proceder-pago-button btn-Apply">
+      <button className="login-button">
         Proceder al Pago
       </button>
+      <div className="border-b border-gray-300 pb-2 mb-4"></div>
+
 
             {/* NUEVA COSA */}
 
 <div className="productos-container">
   <h3>Título de Productos a Comprar</h3>
-  <div className="producto flex flex-nowrap">
-    <div className="prod  col-span-2">
-      <div className="producto-content">
+  <div className="flex flex-row">
+    <div class="basis-1/4">
+      <div className="card">
         <div className="imagen-producto2 ">
           <img
             src={foto1}
@@ -158,50 +162,49 @@ const CheckOut = () => {
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />
         </div>
-        <div className="detalles-producto">
-          <h4 className="nombre-producto">Producto 1</h4>
+        <div >
+          <h4 className="">Producto 1</h4>
           <p>Cantidad a comprar: 5</p>
           <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
     </div>
   </div>
-  <hr />
+  
 
-  <div className="producto">
-    <div className="prod">
-      <div className="producto-content">
-        <div className="imagen-producto2">
+  <div className="flex flex-row">
+    <div class="basis-1/4">
+      <div className="card">
+        <div className="imagen-producto2 ">
           <img
             src={foto1}
             alt={foto1}
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />
         </div>
-        <div className="detalles-producto">
-          <h4 className="nombre-producto">Producto 2</h4>
-          <p>Cantidad a comprar: 3</p>
-          <p>Fecha de llegada: 20/10/2023</p>
+        <div >
+          <h4 className="">Producto 1</h4>
+          <p>Cantidad a comprar: 5</p>
+          <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
     </div>
   </div>
-  <hr />
 
-  <div className="producto">
-    <div className="prod">
-      <div className="producto-content">
-        <div className="imagen-producto2">
+  <div className="flex flex-row">
+    <div class="basis-1/4">
+      <div className="card">
+        <div className="imagen-producto2 ">
           <img
             src={foto1}
             alt={foto1}
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />
         </div>
-        <div className="detalles-producto">
-          <h4 className="nombre-producto">Producto 3</h4>
-          <p>Cantidad a comprar: 2</p>
-          <p>Fecha de llegada: 25/10/2023</p>
+        <div >
+          <h4 className="">Producto 1</h4>
+          <p>Cantidad a comprar: 5</p>
+          <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
     </div>

@@ -5,6 +5,8 @@ import { useState } from 'react'; // Importa useState desde React
 import loguser from '../../Interfaces/Login';
 // import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie'; // Importa la biblioteca js-cookie
+
 
 
 
@@ -36,7 +38,10 @@ const Login = () => {
       // Maneja la respuesta de la API aquí (response.data)
       console.log(response.data);
       console.log(response.message);
+      const newValue = response.data.token;
+      Cookies.set('miCookie', newValue); // Crea o actualiza la cookie 'miCookie' con un valor y una fecha de expiración (en días)
       navigate('/');
+
       // history.push('/home');
       return true;
       // Realiza la lógica de redirección o actualización de la interfaz de usuario según la respuesta

@@ -277,6 +277,8 @@
   width: 100%;
   padding-bottom: 10px;
   text-align: center  ;
+  max-width: 300px; /* Aquí puedes definir el ancho máximo deseado */
+
 }
 
 .login-button-claro {

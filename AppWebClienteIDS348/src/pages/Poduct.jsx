@@ -50,22 +50,22 @@ const Product = () => {
         <p className="text-3xl text-green-500">{dataProduct.cant_stock >0 ?"Disponible":"No Disponible"}</p>
         <p className="text-2xl">Precio:</p>
         <p className="text-2xl text-red-500">$/ {dataProduct.precio}</p>
+
         <div class="flex flex-row">
         <div class="basis-1/4">
-        </div>
         <p className="text-2xl">Tamaño: </p>
         <p className="text-2xl">{dataProduct.size} </p>
         </div>
-        <p className="text-2xl text-red-500">$/ {dataProduct.nombreEstadoProductos}</p>
-
+        
         <div className='basis-1/4 mx-2' >
         <p className="text-2xl">Color: </p> 
-        <div className="w-6 h-6 rounded-full border border-black" style={{ backgroundColor: "#000000" }}></div>
+        <div className="w-6 h-6 rounded-full border border-black" style={{ backgroundColor: dataProduct.Color }}></div>
+        </div>
         </div>
 
-        <p className="text-2xl">{dataProduct.descripcion}</p>
+        <p className="text-2xl">Descripcion del producto: </p>
         <div  className="border border-gray-300 p-4 rounded">
-          <p>{dataProduct.Size}</p>
+          <p>{dataProduct.descripcion}</p>
         </div>
       
       <label className="text-2xl ">Cantidad:</label>
