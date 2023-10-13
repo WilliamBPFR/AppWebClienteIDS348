@@ -12,7 +12,7 @@ export default function DropDownSize() {
     ];
 
     return (
-        <div className="card flex justify-center">
+        <div className="border border-gray rounded flex justify-center">
         <Dropdown 
           value={selectedSize} 
           onChange={(e) => setSelectedSize(e.value)} 

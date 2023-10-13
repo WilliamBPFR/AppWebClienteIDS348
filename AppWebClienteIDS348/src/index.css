@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 #searchbar{
-    width: 850px;             
+    width: 850px;        
+    color: #54428E;     
 }
 
   #root {
@@ -244,7 +245,7 @@
 .login-button {
   background-color: #54428E; /* Cambia el color de fondo del botón */
   color: #fff; /* Cambia el color del texto a blanco */
-  border: none;
+  border: 1px solid #54428E;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
@@ -253,14 +254,54 @@
   text-align: center  ;
 }
 
-.login-button:hover {
-  background-color: #0056b3;
+.login-button-claro {
+  background-color: #FFFFFF; /* Cambia el color de fondo del botón */
+  color: #000000; /* Cambia el color del texto a NEGRO */
+  border: 1px solid #54428E;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center  ;
 }
 
+.login-button-claro:hover {
+  background-color: #ffffff;
+  color: #54428E; /* Cambia el color del texto a NEGRO */
+  border: 2px solid #54428E;
+
+} 
 
 .login-button:hover {
-  background-color: #0056b3;
+  background-color: #ffffff;
+  color: #54428E; /* Cambia el color del texto a NEGRO */
+  border: 2px solid #54428E;
+
 }
+
+/* Fotos producto */
+.card {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff; /* Fondo blanco */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Ancho al 100% para las imágenes */
+img {
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* Evita que las imágenes se estiren más allá de su tamaño original */
+}
+
+/* Establece el ancho máximo para el Galleria */
+.galleria-container {
+  max-width: 640px;
+}
+
 
 .form-container {
   flex: 1;
@@ -531,6 +572,7 @@ input[type="tel"]{
 .product-spacing {
   margin-right: 20px; /* You can adjust the value to control the spacing */
 }
+
 
 
 

@@ -42,7 +42,8 @@ const Home = () => {
                 <img
                   className="imagen-producto"
                   src={foto1}
-                  alt={producto.fotos[0]}
+                  alt={producto.fotos != undefined ? producto.fotos[0].url : 'No hay foto'
+                }
                 />
 
                 <div className="info-producto">
