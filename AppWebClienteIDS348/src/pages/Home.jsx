@@ -9,10 +9,10 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(0); // Estado para mantener el número de página actual
 
   useEffect(() => {
-    async function fetchProductos(page) {
+    async function fetchProductos(pag) {
       try {
         console.log("ENTRE USEFECT PRODUCTOOOO");
-        const response = await ProductoPaginacion(page + 1);
+        const response = await ProductoPaginacion(pag+1);
         const productosData = response.data.value; // Asume que la respuesta contiene una lista de productos
         console.log(productosData);
         setProductos(productosData);
@@ -42,14 +42,14 @@ const Home = () => {
                 <img
                   className="imagen-producto"
                   src={foto1}
-                  alt={producto.fotos[0]}
+                  alt={producto.fotos != undefined ? producto.fotos[0].url : 'No hay foto'}
                 />
 
                 <div className="info-producto">
                   <p className="titulo">{producto.nombre}</p>
                   <p className="descripcion">{producto.descripcion}</p>
                   <p className="precio">{producto.precio}</p>
-                  <a href={`/product/${producto.id}`}> {/* Ajusta la URL según tu estructura */}
+                  <a href={`/product/${producto.idProducto}`}> {/* Ajusta la URL según tu estructura */}
                     <button className="login-button">Ver más</button>
                   </a>
                 </div>
