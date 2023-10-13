@@ -7,6 +7,7 @@ import Product from './pages/Poduct';
 import Header from './components/Nav/Header';
 import Filtro from './components/filter/Filter';
 import ShoppingCart from './pages/ShoppingCart';
+import CheckOut from './components/Cart/CheckOut';
 
 
 const router = createBrowserRouter(
@@ -17,6 +18,8 @@ const router = createBrowserRouter(
       <Route path="register" element={<Register />} />
       <Route path="product" element={<Product />} params= {{id: ""}}/>
       <Route path="shoppingCart" element={<ShoppingCart />} />
+      <Route path="checkout" element={<CheckOut />} />
+
     </Route>
   )
 )

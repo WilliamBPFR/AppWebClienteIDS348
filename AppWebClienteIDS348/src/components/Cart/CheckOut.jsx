@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import foto1 from '@/assets/foto1.jpg';
 
 const CheckOut = () => {
   const [direccionEnvio, setDireccionEnvio] = useState({
@@ -79,7 +80,7 @@ const CheckOut = () => {
   };
 
   return (
-    <div className="resumen-compra-container">
+    <div className="resumen-compra-container mt-6">
       <div className="direccion-envio-1">
         <h3 >Dirección de Envío</h3>
         <p>
@@ -96,23 +97,24 @@ const CheckOut = () => {
       <div className="metodo-pago">
         <h3>Método de Pago</h3>
         <p>
-          <span className="metodo-pago-label">Método de Pago: {metodoPago}</span>
+          <span className="metodo-pago-label font-bold pl-10">Método de Pago:</span>
+          <span> {metodoPago}</span>
         </p>
         {metodoPago === 'Tarjeta de Crédito' && (
           <div className="tarjeta-de-credito">
-            <label>Número de Tarjeta:</label>
-            <input
+            <label className="font-bold pl-10">Número de Tarjeta:</label>
+            <input 
               type="text"
               value={numeroTarjeta}
               onChange={(e) => setNumeroTarjeta(e.target.value)}
             />
-            <label>Fecha de Vencimiento:</label>
+            <label className="font-bold underline">Fecha de Vencimiento:</label>
             <input
               type="text"
               value={fechaVencimiento}
               onChange={(e) => setFechaVencimiento(e.target.value)}
             />
-            <label>CVC:</label>
+            <label className="font-bold underline">CVC:</label>
             <input
               type="text"
               value={cvc}
@@ -120,12 +122,14 @@ const CheckOut = () => {
             />
           </div>
         )}
-        <button
-          onClick={handleChangeMetodoPago}
-          className="cambiar-metodo-pago-button btn-limpiar"
-        >
-          Cambiar Método de Pago
-        </button>
+        <div style={{marginLeft:'28%',marginTop:"1%"}}>
+          <button
+            onClick={handleChangeMetodoPago}
+            className="cambiar-metodo-pago-button btn-limpiar"
+          >
+            Cambiar Método de Pago
+          </button>
+        </div>
       </div>
       <hr className="linea-separadora" />
       <div className="seleccion-envio">
@@ -139,6 +143,70 @@ const CheckOut = () => {
       <button className="proceder-pago-button btn-Apply">
         Proceder al Pago
       </button>
+
+            {/* NUEVA COSA */}
+
+<div className="productos-container">
+  <h3>Título de Productos a Comprar</h3>
+  <div className="producto flex flex-nowrap">
+    <div className="prod  col-span-2">
+      <div className="producto-content">
+        <div className="imagen-producto2 ">
+          <img
+            src={foto1}
+            alt={foto1}
+            style={{ maxWidth: '100px', maxHeight: '100px' }}
+          />
+        </div>
+        <div className="detalles-producto">
+          <h4 className="nombre-producto">Producto 1</h4>
+          <p>Cantidad a comprar: 5</p>
+          <p>Fecha de llegada: 15/10/2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <div className="producto">
+    <div className="prod">
+      <div className="producto-content">
+        <div className="imagen-producto2">
+          <img
+            src={foto1}
+            alt={foto1}
+            style={{ maxWidth: '100px', maxHeight: '100px' }}
+          />
+        </div>
+        <div className="detalles-producto">
+          <h4 className="nombre-producto">Producto 2</h4>
+          <p>Cantidad a comprar: 3</p>
+          <p>Fecha de llegada: 20/10/2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <div className="producto">
+    <div className="prod">
+      <div className="producto-content">
+        <div className="imagen-producto2">
+          <img
+            src={foto1}
+            alt={foto1}
+            style={{ maxWidth: '100px', maxHeight: '100px' }}
+          />
+        </div>
+        <div className="detalles-producto">
+          <h4 className="nombre-producto">Producto 3</h4>
+          <p>Cantidad a comprar: 2</p>
+          <p>Fecha de llegada: 25/10/2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };

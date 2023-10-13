@@ -156,6 +156,28 @@
   font-weight: bold;
   margin: 5px 0; /* Añade espacio vertical alrededor del título */
 }
+.detalles-producto {
+  max-width: 40%; /* Esto limita la altura al 15% de la altura de la ventana */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+.productos-container {
+  max-height: 350px; /* Esto limita la altura al 15% de la altura de la ventana */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+
+.producto {
+  height: 150px; /* Esto limita la altura al 15% de la altura de la ventana */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+.prod {
+  height: 100%; /* Esto limita la altura al 15% de la altura de la ventana */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
+.imagen-producto2 {
+  height: 100px; /* Esto limita la altura al 15% de la altura de la ventana */
+  max-width: 20%;
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
+}
 
 /* Estilos para la descripción del producto */
 .descripcion {
