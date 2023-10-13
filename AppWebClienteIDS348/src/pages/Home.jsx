@@ -25,6 +25,7 @@ const Home = () => {
 
   const handlePageChange = (page) => {
     console.log("ENTRE HANDLEPAGECHANGE");
+    console.log("Primero: "+ page);
     setCurrentPage(page); // Actualiza el estado de la página actual
   };
 
@@ -58,7 +59,9 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <Pagination onPageChange={handlePageChange}/>
+        <Pagination 
+        onPageChange = {handlePageChange}
+        />
       </div>
     </div>
   );

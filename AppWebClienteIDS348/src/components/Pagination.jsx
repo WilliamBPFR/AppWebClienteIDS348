@@ -6,10 +6,15 @@ import { totalProductos } from "@/services/productoService";
 
 
 
-export default function Pagination() {
+export default function Pagination({onPageChange}) {
     const [first, setFirst] = useState(0);
     const [rows, setRows] = useState(8);
     const [totalRecords, setTotalRecords] = useState(0); // Inicializa totalRecords en 0
+    const handlePageChange = (event) => {
+      setFirst(event.first);
+      setRows(event.rows);
+      onPageChange(event.page)
+  };
 
     useEffect(() => {
         // Llama a la función totalProductos para obtener la cantidad total de productos
@@ -25,24 +30,21 @@ export default function Pagination() {
             });
     }, []); // Este efecto se ejecutará una vez al cargar el componente
 
-    const onPageChange = (event) => {
-        setFirst(event.first);
-        setRows(event.rows);
-    };
+    // const onPageChange = (event) => {
+    //   console.log("ENTRE ONPAGECHANGE");
+    //   console.log("Primero: "+event.first);
+    //   console.log("Filas: "+event.rows);
+    //     setFirst(event.first);
+    //     setRows(event.rows);
+    // };
 
-  //   const handlePageChange = (event) => {
-  //     setFirst(event.first);
-  //     setRows(event.rows);
 
-  //     // Llama a la función onPageChange y pasa el número de página actual (event.page)
-  //     onPageChange(event.page);
-  // };
     return (
         <div className="">
             <Paginator first={first}
              rows={rows} 
-            totalRecords={totalRecords}  
-            onPageChange={onPageChange} />
+            totalRecords={totalRecords}
+            onPageChange={handlePageChange} />
         </div>
     );
 }
