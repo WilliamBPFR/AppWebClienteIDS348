@@ -51,8 +51,8 @@ const Product = () => {
         <p className="text-2xl">Precio:</p>
         <p className="text-2xl text-red-500">$/ {dataProduct.precio}</p>
 
-        <div class="flex flex-row">
-        <div class="basis-1/4">
+        <div className="flex flex-row">
+        <div className="basis-1/4">
         <p className="text-2xl">Tamaño: </p>
         <p className="text-2xl">{dataProduct.size} </p>
         </div>

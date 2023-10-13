@@ -21,7 +21,7 @@ export const LoginUser = async (log) => {
 
   export const VerificarUsuarioLogin = async (token) => {
     try {
-        const response = await axios.post(BASE_URL + "VerificarAutenticado", null, {
+        const response = await axios.get(BASE_URL + "VerificarAutenticado", {
           headers: {
             'Authorization': `Bearer ${token}` // Reemplaza 'userToken' con el token del usuario
           },
@@ -36,7 +36,7 @@ export const LoginUser = async (log) => {
 
   export const TraerUsuario = async (token) => {
     try{
-      const response = await axios.get(BASE_URL + "ObtenerInfoCliente", null, {
+      const response = await axios.get(BASE_URL + "ObtenerInfoCliente", {
         headers: {
           'Authorization': `Bearer ${token}` // Reemplaza 'userToken' con el token del usuario
         },

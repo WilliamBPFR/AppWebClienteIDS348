@@ -38,7 +38,9 @@ const Login = () => {
       // Maneja la respuesta de la API aquí (response.data)
       console.log(response.data);
       console.log(response.message);
-      const newValue = response.data.token;
+      const newValue = response.data.value.token;
+      Cookies.remove('miCookie'); // Crea o actualiza la cookie 'miCookie' con un valor y una fecha de expiración (en días)
+      console.log()
       Cookies.set('miCookie', newValue); // Crea o actualiza la cookie 'miCookie' con un valor y una fecha de expiración (en días)
       navigate('/');
 

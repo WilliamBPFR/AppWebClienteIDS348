@@ -18,34 +18,34 @@ const Header = () => {
   const [loggeado, setloggeado] = useState(false);
 
   useEffect(() => {
-      const cookie =Cookies.get('miCookie');
+      const cookie = Cookies.get('miCookie');
       if(cookie == undefined || cookie == "" || cookie == null){
         setloggeado(false);
-        navigate('/login');
+        if(location.pathname == "/shoppingCart"){
+          navigate('/login');
+        }
       }
       else{
-     console.log("entreee a verificacion de usuario: ")
-      async function verificacionUsuario(cookie) {
-          let response;
-          response = await VerificarUsuarioLogin(cookie);
-          if(response.data != true)
+     console.log("entreee a verificacion de usuario: " + cookie)
+      VerificarUsuarioLogin(cookie).
+      then(response => {
+        console.log(response.data)
+          if(response.data.usuario_logueado != true)
           {
             setloggeado(false);
           }
           else{
             setloggeado(true);
           }
-      }}
-         
-      
+    })
+  }
   }, [location.pathname]);
 
   useEffect(() => {
     if(loggeado == true){
       const cookie =Cookies.get('miCookie');
-      async function InfoUsuario(cookie) {
-          let response;
-          response = await TraerUsuario(cookie);
+      TraerUsuario(cookie)
+      .then(response => {
           if(response.status == true)
           {
             setUserCorreo(response.data.email);
@@ -57,8 +57,8 @@ const Header = () => {
             navigate('/login');
             }
           }
-      }}
-    
+        });
+        }
   }, [loggeado]);
 
 useEffect(() => {
@@ -68,6 +68,7 @@ useEffect(() => {
 }, [searchValue]);
 
   const handleSearch = (value) => {
+    console.log("acrtulaikdcnkascxkansxkmasnxk")
     setSearchValue(value); // Almacena el valor de búsqueda en el estado
   };
 

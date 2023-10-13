@@ -28,7 +28,6 @@ export default function Pagination({onPageChange}) {
                 .then(response => {
                     // Actualiza el estado de totalRecords con el valor obtenido
                     console.log("ESTOOOO FUNCIONNAAAA");
-                    console.log(response.data);
                     setTotalRecords(response.data.value); // Asegúrate de que response.data contenga la cantidad total
                 })
                 .catch(error => {

@@ -13,7 +13,6 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(0); // Estado para mantener el número de página actual
 
   useEffect(() => {
-    if(location.pathname == "/"){
     async function fetchProductos(pag) {
       try {
         console.log("ENTRE USEFECT PRODUCTOOOO: " + searchParam);
@@ -31,8 +30,7 @@ const Home = () => {
       }
     }
     fetchProductos(currentPage); // Llama a la función con la página actual
-  }
-  }, [currentPage]);
+  }, [currentPage,searchParam]);
 
   const handlePageChange = (page) => {
     console.log("ENTRE HANDLEPAGECHANGE");
