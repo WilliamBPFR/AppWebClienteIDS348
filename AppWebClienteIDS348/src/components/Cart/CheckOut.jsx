@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import foto1 from '@/assets/foto1.jpg';
+import { useLocation } from 'react-router-dom';
+import {ProductDetails} from '@/services/productoService';
+import {TraerUsuario} from '@/services/usuarioService';
 
 const CheckOut = () => {
+  const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
+  const prod = new URLSearchParams(location.search).get('id'); // Obtiene el valor del parámetro search
+  const cant = new URLSearchParams(location.search).get('cantidad'); // Obtiene el valor del parámetro search
+
   const [direccionEnvio, setDireccionEnvio] = useState({
     calle: 'Calle de Ejemplo',
     ciudad: 'Ciudad de Ejemplo',
@@ -12,7 +19,31 @@ const CheckOut = () => {
   const [metodoPago, setMetodoPago] = useState('Tarjeta de Crédito');
   const [numeroTarjeta, setNumeroTarjeta] = useState('');
   const [fechaVencimiento, setFechaVencimiento] = useState('');
+  const [productos, setProductos] = useState('');
+  const [user, serUser] = useState('');
   const [cvc, setCvc] = useState('');
+
+useEffect(() => {
+  ProductDetails(prod)
+  .then(response => {
+    console.log("ENTRE AL USEEFFECT");
+    console.log(response.data);
+    setProductos(response.data);
+  })
+  .catch(error => {
+    console.error('Error al obtener los productos:', error);
+  });
+
+  TraerUsuario()
+  .then(response => {
+    console.log("ENTRE AL USEEFFECT");
+    console.log(response.data);
+    serUser(response.data);
+  }).catch(error => {
+    console.error('Error al obtener los productos:', error);
+  });
+}, [prod]);
+  
 
   const handleChangeMetodoPago = async () => {
     const { value: nuevoMetodoPago } = await Swal.fire({
@@ -84,7 +115,7 @@ const CheckOut = () => {
       <div className="direccion-envio-1">
         <h3 >Dirección de Envío</h3>
         <p>
-          {direccionEnvio.calle}, {direccionEnvio.ciudad}, {direccionEnvio.codigoPostal}
+          {user.direccion}
         </p>
         <button
           onClick={handleChangeDireccionEnvio}
@@ -151,9 +182,9 @@ const CheckOut = () => {
             {/* NUEVA COSA */}
 
 <div className="productos-container">
-  <h3>Título de Productos a Comprar</h3>
+  <h3>Productos a Comprar</h3>
   <div className="flex flex-row">
-    <div class="basis-1/4">
+    <div className="basis-1/4">
       <div className="card">
         <div className="imagen-producto2 ">
           <img
@@ -163,47 +194,8 @@ const CheckOut = () => {
           />
         </div>
         <div >
-          <h4 className="">Producto 1</h4>
-          <p>Cantidad a comprar: 5</p>
-          <p>Fecha de llegada: 15/10/2023</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-  <div className="flex flex-row">
-    <div class="basis-1/4">
-      <div className="card">
-        <div className="imagen-producto2 ">
-          <img
-            src={foto1}
-            alt={foto1}
-            style={{ maxWidth: '100px', maxHeight: '100px' }}
-          />
-        </div>
-        <div >
-          <h4 className="">Producto 1</h4>
-          <p>Cantidad a comprar: 5</p>
-          <p>Fecha de llegada: 15/10/2023</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="flex flex-row">
-    <div class="basis-1/4">
-      <div className="card">
-        <div className="imagen-producto2 ">
-          <img
-            src={foto1}
-            alt={foto1}
-            style={{ maxWidth: '100px', maxHeight: '100px' }}
-          />
-        </div>
-        <div >
-          <h4 className="">Producto 1</h4>
-          <p>Cantidad a comprar: 5</p>
+          <h4 className="">{prod.nombre}</h4>
+          <p>Cantidad a comprar: {cant}</p>
           <p>Fecha de llegada: 15/10/2023</p>
         </div>
       </div>
