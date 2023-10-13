@@ -88,50 +88,53 @@ const CheckOut = () => {
         </p>
         <button
           onClick={handleChangeDireccionEnvio}
-          className="cambiar-direccion-button btn-limpiar"
+          className="login-button"
         >
           Cambiar Dirección
         </button>
       </div>
-      <hr className="linea-separadora" />
+      <div className="border-b border-gray-300 pb-2 mb-4"></div>
       <div className="metodo-pago">
         <h3>Método de Pago</h3>
         <p>
-          <span className="metodo-pago-label font-bold pl-10">Método de Pago:</span>
+          <span className="m-4 metodo-pago-label font-bold">Método de Pago:</span>
           <span> {metodoPago}</span>
         </p>
         {metodoPago === 'Tarjeta de Crédito' && (
           <div className="tarjeta-de-credito">
-            <label className="font-bold pl-10">Número de Tarjeta:</label>
+            <label className="font-bold pl-5">Número de Tarjeta:</label>
             <input 
               type="text"
               value={numeroTarjeta}
               onChange={(e) => setNumeroTarjeta(e.target.value)}
             />
-            <label className="font-bold underline">Fecha de Vencimiento:</label>
+            <label className="font-bold">Fecha de Vencimiento:</label>
             <input
               type="text"
               value={fechaVencimiento}
               onChange={(e) => setFechaVencimiento(e.target.value)}
             />
-            <label className="font-bold underline">CVC:</label>
+            <label className="font-bold ">CVC:</label>
             <input
               type="text"
               value={cvc}
               onChange={(e) => setCvc(e.target.value)}
             />
+
           </div>
+          
         )}
-        <div style={{marginLeft:'28%',marginTop:"1%"}}>
+        <div >
           <button
             onClick={handleChangeMetodoPago}
-            className="cambiar-metodo-pago-button btn-limpiar"
+            className="m-4 login-button"
           >
             Cambiar Método de Pago
           </button>
+          <div className="border-b border-gray-300 pb-2 mb-4"></div>
+
         </div>
       </div>
-      <hr className="linea-separadora" />
       <div className="seleccion-envio">
         <h3>Selección de Envío</h3>
         <p>
@@ -139,10 +142,11 @@ const CheckOut = () => {
           <input type="radio" name="envio" value="envio-estandar" /> Envío Estándar
         </p>
       </div>
-      <hr className="linea-separadora" />
-      <button className="proceder-pago-button btn-Apply">
+      <button className="login-button">
         Proceder al Pago
       </button>
+      <div className="border-b border-gray-300 pb-2 mb-4"></div>
+
 
             {/* NUEVA COSA */}
 
