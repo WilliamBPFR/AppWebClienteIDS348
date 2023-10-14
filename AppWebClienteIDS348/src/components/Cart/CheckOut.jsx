@@ -4,6 +4,8 @@ import foto1 from '@/assets/foto1.jpg';
 import { useLocation } from 'react-router-dom';
 import {ProductDetails} from '@/services/productoService';
 import {TraerUsuario} from '@/services/usuarioService';
+import Cookies from 'js-cookie';
+
 
 const CheckOut = () => {
   const location = useLocation(); // Utiliza useLocation para obtener la ubicación actual
@@ -26,23 +28,26 @@ const CheckOut = () => {
 useEffect(() => {
   ProductDetails(prod)
   .then(response => {
-    console.log("ENTRE AL USEEFFECT");
+    console.log("ENTRE AL USEEFFECT detalle producto");
     console.log(response.data);
-    setProductos(response.data);
+    setProductos(response.data.value.value);
   })
   .catch(error => {
     console.error('Error al obtener los productos:', error);
   });
+}, []);
 
-  TraerUsuario()
+useEffect(() => {
+  const cookie = Cookies.get('miCookie');
+  TraerUsuario(cookie)
   .then(response => {
-    console.log("ENTRE AL USEEFFECT");
+    console.log("ENTRE AL USEEFFECT traer usuario");
     console.log(response.data);
     serUser(response.data);
   }).catch(error => {
     console.error('Error al obtener los productos:', error);
   });
-}, [prod]);
+},[]);
   
 
   const handleChangeMetodoPago = async () => {
